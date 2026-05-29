@@ -55,7 +55,7 @@ CREATE TABLE cliente (
   cidade VARCHAR(50) NOT NULL,
   estado VARCHAR(2) NOT NULL,
   endereco VARCHAR(150),
-  email VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
@@ -156,8 +156,6 @@ CREATE TABLE log_acao (
   entidade VARCHAR(50) NOT NULL,
   entidade_id VARCHAR(50) NOT NULL,
   ip_origem VARCHAR(45),
-  dados_anteriores JSONB,
-  dados_novos JSONB,
   data_acao TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   descricao TEXT
 );
